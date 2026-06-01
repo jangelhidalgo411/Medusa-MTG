@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Turno</title>
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			td, tbody th {
+				vertical-align: middle;
+			}
+			#main {
+				width: 100% !important;
+				margin: 0 !important;
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<section class="post">
+					<header class="major">
+						<h1>Turno</h1>
+					</header>
+					<p> Un turno se divide en fases y cada fase tiene sus pasos.</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Fase</th>
+								<th>Paso</th>
+								<th>Descripcion</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- Fase inicial -->
+							<tr>
+								<th rowspan="3">Fase inicial</th>
+								<td>Paso de enderezar</td>
+								<td>
+									Los siguientes eventos suceden durante el paso de enderezar en orden:
+									<ol>
+										<li>Todos los permanentes con cambio de fase que controle el jugador activo salen de fase, y todos los permanentes fuera de fase que estaban controlados por el jugador activo entran en fase a la vez.</li>
+										<li>El jugador activo determina que permanentes que controla ese jugador se enderezan, luego endereza todos esos permanentes a la vez. (El jugador enderezará todos los permanentes que controla a menos que el efecto de una carta lo prevenga.)</li>
+									</ol>
+									Ningún jugador recibe prioridad durante este paso, por tanto, no pueden jugarse hechizos o habilidades.
+								</td>
+							</tr>
+							<tr>
+								<td>Paso de mantenimiento</td>
+								<td>Al comienzo del paso de mantenimiento, cualquier habilidad disparada tanto durante el paso de enderezar como al comienzo del mantenimiento van a la pila. Después el jugador activo obtiene la prioridad, por primera vez</td>
+							</tr>
+							<tr>
+								<td>Paso de robar</td>
+								<td>
+									Los siguientes eventos suceden durante este paso en orden:
+									<ol>
+										<li>El jugador activo roba una carta de su biblioteca.</li>
+										<li>Cualquier habilidad que se dispare al comienzo del paso de robar va a la pila.</li>
+										<li>El jugador activo obtiene la prioridad.</li>
+									</ol>
+								</td>
+							</tr>
+							<!-- Fase principal pre-combate -->
+							<tr>
+								<th>Fase principal pre-combate</th>
+								<td></td>
+								<td>
+									Durante la fase principal suceden los siguientes eventos:
+									<ol>
+										<li>Las habilidades que se disparan al comienzo de la fase principal van a la pila.</li>
+										<li>El jugador activo obtiene la prioridad.</li>
+									</ol>
+									Una vez por turno, durante esta fase el jugador activo podrá jugar una tierra de su mano cuando la pila esté vacía. Esto se considera una acción especial que no usa la pila.
+								</td>
+							</tr>
+							<!-- Fase de combate -->
+							<tr>
+								<th rowspan="5">Fase de combate</th>
+								<td>Paso de inicio del combate</td>
+								<td>
+									Los siguientes eventos suceden durante este paso en orden:
+									<ul>
+										<li>Si es un juego multijugador en el que todos los oponentes del jugador activo no se convierten en jugadores defensores automáticamente, el jugador activo elige un oponente para que se convierta en el jugador defensor (o a varios si se juega con la alternativa de atacar a varios jugadores).</li>
+										<li>El jugador activo obtiene la prioridad.</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Paso de declarar atacantes</td>
+								<td>
+									Los siguientes eventos suceden durante este paso en orden:
+									<ul>
+										<li>El jugador activo declara cuales de sus criaturas atacarán.</li>
+										<li>Las habilidades disparadas cuando se declara un atacante o por otros motivos relacionados son puestas en la pila. Luego el jugador activo recibe prioridad.</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Paso de declarar bloqueadoras</td>
+								<td>
+									Los siguientes eventos suceden durante este paso en orden:
+									<ul>
+										<li>El jugador defensor declara cuales de sus criaturas bloquearán.</li>
+										<li>El jugador activo anuncia el orden en el que sus criaturas bloqueadas harán daño a las criaturas que las están bloqueando.</li>
+										<li>El jugador defensor anuncia el orden en el que sus criaturas bloqueadoras harán daño a las criaturas que estén bloqueando (si son más de una).</li>
+										<li>Las habilidades disparadas cuando se declara una bloqueadora o por otros motivos relacionados son puestas en la pila. Luego el jugador activo recibe prioridad.</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Paso de daño de combate</td>
+								<td>
+									Los siguientes eventos suceden durante este paso en orden:
+									<ul>
+										<li>El jugador activo anuncia cómo asignarán daño sus criaturas atacantes y luego el jugador defensor anuncia cómo asignarán daño sus criaturas bloqueadoras.</li>
+										<li>Se hace todo el daño asignado a la vez.</li>
+										<li>Las habilidades disparadas cuando se hace daño o por efectos basados en el estado posteriores, son puestas en la pila. Luego el jugador activo recibe prioridad.</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Paso de final del combate</td>
+								<td>
+									Los siguientes eventos suceden durante este paso en orden:
+									<ul>
+										<li>El jugador activo obtiene la prioridad.</li>
+										<li>Se disparan las habilidades que se disparan "al final del combate" y terminan los efectos que duran "hasta el final del combate".</li>
+										<li>Al finalizar este paso se remueven del combate todas las criaturas y planeswalkers que estuvieron en combate</li>
+									</ul>
+								</td>
+							</tr>							
+							<!-- Fase principal post-combate -->
+							<tr>
+								<th>Fase principal post-combate</th>
+								<td>Paso</td>
+								<td>
+									Durante la fase principal suceden los siguientes eventos:
+									<ul>
+										<li>Las habilidades que se disparan al comienzo de la fase principal van a la pila.</li>
+										<li>El jugador activo obtiene la prioridad.</li>
+									</ul>
+									Una vez por turno, durante esta fase el jugador activo podrá jugar una tierra de su mano cuando la pila esté vacía. Esto se considera una acción especial que no usa la pila.
+								</td>
+							</tr>
+								<!--
+									xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+									<ul>
+										<li>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
+										<li>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
+									</ul>
+								-->	
+							<!-- Fase de finalización -->
+							<tr>
+								<th rowspan="2">Fase de finalización</th>
+								<td>Paso final</td>
+								<td>El paso final (en Inglés, end step), anteriormente llamado "paso de final de turno," y a veces llamado "final del turno," es el primer paso de la fase final. Es habitualmente la última oportunidad de un jugador de realizar cualquier acción antes de que comience el turno del siguiente jugador.</td>
+							</tr>
+							<tr>
+								<td>Paso de limpieza</td>
+								<td>El paso de limpieza (en Inglés, cleanup phase) es el segundo y último paso de la fase final. Los hechizos y habilidades pueden jugarse durante este paso solo si existen las condiciones para cualquier acción basada en el estado o si cualquier habilidad se ha disparado. En tal caso, esas acciones basadas en el estado se realizan y/o esas habilidades se ponen en la pila y el jugador activo obtiene la prioridad y los jugadores pueden lanzar hechizos y activar habilidades. Una vez que todos los jugadores pasan la prioridad cuando la pila esta vacía, el paso se repite.</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul></li>&copy; Untitled</li></li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
