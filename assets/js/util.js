@@ -168,6 +168,9 @@
 
 									if (target == '_blank')
 										window.open(href);
+									else if (target == 'MainFrame') {
+									    $('#MainIframe').attr('src', href);
+									}
 									else
 										window.location.href = href;
 
